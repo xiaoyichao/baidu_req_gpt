@@ -16,7 +16,7 @@
     nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm130b  --task chuangzuozhe > "./logs/glm130b_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
     nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm6b --task chuangzuozhe > "./logs/glm6b_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
     nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type yiyan --task chuangzuozhe > "./logs/yiyan_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python -u xiaoyichao_gpt/single_talk_request.py --bot_type minimax --task chuangzuozhe > "./logs/minimax_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type minimax --task chuangzuozhe > "./logs/minimax_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
 
 
 """
@@ -377,7 +377,7 @@ class Req_minimax(object):
         初始化
         """
         # 重试次数
-        self.retry_times = 20
+        self.retry_times = 5
         self.group_id = "1684120827778191"
         self.api_key = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiMTExIiwiU3ViamVjdElEIjoiMTY4NDEyMDgyNzkwNjk4NSIsIlBob25lIjoiTVRNME9EZzRPVFl3TURZPSIsIkdyb3VwSUQiOiIxNjg0MTIwODI3Nzc4MTkxIiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoibG91Y2hhbzAyQGJhaWR1LmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDIzLTA1LTI2IDEwOjIxOjUwIiwiaXNzIjoibWluaW1heCJ9.IMtDaL8mNwu-8wMznQgBsDzBfItyuKQp8S7IVsK-TV9x8PrLUSOLTACMvJibTL1s7R34yJAnpKxdTReTD_GRKMkCsfN1ThiFSHCwh2AG6TnvQ8yuUAIOeZKRszyuwfH3wpTV2a3XUkrCyoEOvXIYHFSl24GwzrtGhsU-Xdee6xveK-pyA5iMhAQoAh-9gV6IYRnbEC42rGnOV8QwSK-IQfRm_EiTF-1iKkFKBTZIFhU2uDNCRQ_fwO8vCXKFHih5saYp0WZFGBxbiJh0IILprtySZnBxb5V2FCy14VmrxqBPTH5rCoTvzDTs_UVyYaxmGw5lEpLgiXtWGA-oQxvdMA"
         self.url = f'https://api.minimax.chat/v1/text/chatcompletion?GroupId={self.group_id}'
@@ -449,7 +449,7 @@ if __name__ == '__main__':
     # xlsx = pd.read_excel(args.input_file_path, sheet_name="知识增强") #输入
     # for i in range(len(xlsx.values)):
     for i in tqdm(range(len(xlsx.values))):
-    # for i in range(200,300,1):
+    # for i in range(85,300,1):
         if i<2:
             continue
         ori_content = xlsx.values[i][1]
@@ -515,11 +515,3 @@ if __name__ == '__main__':
     with pd.ExcelWriter(output_path) as writer:
         df1.to_excel(writer, sheet_name=sheet_name, index=False)
     
-        
-        
-
-
-
-
-
-

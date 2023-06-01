@@ -1,25 +1,32 @@
 """req_wenxin pub
-    ps -ef|grep single_talk_request
+- [ ] 根据pid看程序名称
+ps -aux | grep 37540
+- [ ] 根据程序名称 查询piddu -sh *
+ps -ef|grep single_talk_request_2
 
 
-    python xiaoyichao_gpt/single_talk_request.py --bot_type  glm130b   --task retie
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm130b  --task retie > "./logs/glm130b_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm6b --task retie > "./logs/glm6b_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type yiyan --task retie > "./logs/yiyan_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type minimax --task retie > "./logs/minimax_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    
+log2
+    nohup  python  xiaoyichao_gpt/single_talk_request_liuyi.py --bot_type glm130b  --task retie > "./logs_liuyi/glm130b_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type glm6b --task retie > "./logs2/glm6b_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type yiyan --task retie > "./logs2/yiyan_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type minimax --task retie > "./logs2/minimax_retie_$(date +"%Y-%m-%d-%H").log" 2>&1 &
 
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm130b  --task qunliao > "./logs/glm130b_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm6b --task qunliao > "./logs/glm6b_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type yiyan --task qunliao > "./logs/yiyan_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type minimax --task qunliao > "./logs/minimax_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type glm130b  --task qunliao > "./logs2/glm130b_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type glm6b --task qunliao > "./logs2/glm6b_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type yiyan --task qunliao > "./logs2/yiyan_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type minimax --task qunliao > "./logs2/minimax_qunliao_$(date +"%Y-%m-%d-%H").log" 2>&1 &
 
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm130b  --task chuangzuozhe > "./logs/glm130b_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type glm6b --task chuangzuozhe > "./logs/glm6b_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request.py --bot_type yiyan --task chuangzuozhe > "./logs/yiyan_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
-    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type minimax --task chuangzuozhe > "./logs/minimax_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type glm130b  --task chuangzuozhe > "./logs2/glm130b_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type glm6b --task chuangzuozhe > "./logs2/glm6b_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type yiyan --task chuangzuozhe > "./logs2/yiyan_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup  python  xiaoyichao_gpt/single_talk_request_2.py --bot_type minimax --task chuangzuozhe > "./logs2/minimax_chuangzuozhe_$(date +"%Y-%m-%d-%H").log" 2>&1 &
 
-    0 3 * * *  nohup  /Users/xiaoyichao/anaconda3/bin/python3  /Users/xiaoyichao/Documents/work/projects/xiaoyichao_gpt/xiaoyichao_gpt/single_talk_request_2.py --bot_type minimax --task retie > "/Users/xiaoyichao/Documents/work/projects/xiaoyichao_gpt/logs/minimax_retie_$(date +"%Y-%m-%d-%H").log" 2>&1
 
+    nohup python  xiaoyichao_gpt/single_talk_request_liuyi.py --bot_type glm130b  --task rensheduihua > "./logs_liuyi/glm130b_rensheduihua_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup python  xiaoyichao_gpt/single_talk_request_liuyi.py --bot_type glm6b  --task rensheduihua > "./logs_liuyi/glm6b_rensheduihua_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup python  xiaoyichao_gpt/single_talk_request_liuyi.py --bot_type yiyan  --task rensheduihua > "./logs_liuyi/yiyan_rensheduihua_$(date +"%Y-%m-%d-%H").log" 2>&1 &
+    nohup python  xiaoyichao_gpt/single_talk_request_liuyi.py --bot_type minimax  --task rensheduihua > "./logs/minimax_rensheduihua_$(date +"%Y-%m-%d-%H").log" 2>&1 &
 """
 #!/usr/bin/env python
 #-*- coding=utf8 -*-
@@ -47,7 +54,6 @@ else:
     import urllib.request as urllib2
 import pandas as pd
 # from requests_toolbelt import MultipartEncoder
-
 
 
 
@@ -140,7 +146,7 @@ class ReqWenxin(object):
 
     def req_bot(self, query):
         """req_bot"""
-
+        try_num = 0
         ac = self.read_acckey()
         if ac is None:
             self.gen_acckey()
@@ -150,7 +156,11 @@ class ReqWenxin(object):
         reqdata = {"messages":[{"role":"user", "content":query}]}
         headers = {"Content-Type": "application/json"}
         bns_list = get_bns_server("group.iknow-llm-proxy-tpl-online.iknow.all")
-        random_server = random.choice(bns_list)
+        while len(bns_list)==0 and try_num<100:
+            bns_list = get_bns_server("group.iknow-llm-proxy-tpl-online.iknow.all")
+            time.sleep(random.randint(1,10))
+        if len(bns_list)>0:
+            random_server = random.choice(bns_list)
         self.ip, self.port = random_server[0], random_server[1]
         try:
             boturl='%s?access_token=%s'%(self.boturl, ac)
@@ -379,8 +389,8 @@ class Req_minimax(object):
         """
         # 重试次数
         self.retry_times = 5
-        self.group_id = "1682318575574856"
-        self.api_key = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiMTExIiwiU3ViamVjdElEIjoiMTY4MjMxODU3NTY3MTk4OCIsIlBob25lIjoiTVRNMk9UTXlOVGc0T0RBPSIsIkdyb3VwSUQiOiIxNjgyMzE4NTc1NTc0ODU2IiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoiZmFuZ2ZyZWVAc2luYS5jb20iLCJDcmVhdGVUaW1lIjoiMjAyMy0wNS0yNiAxMDoyMzozMyIsImlzcyI6Im1pbmltYXgifQ.cLTc7reOo2UbhOJO8c1XMnj3LM7XEBT59IahfU8xjdiJhXFPR-OsKTiUugR4CZQD-_7Y4u9lxKvKXzRypLmjgpdk_lAokXE-uMxA7Z6DOzllqIYIZAtqPcYKJog9GVFPdp7sCAqjnzNvWIwOuGuVUpzlk4b24J_CamPgRmVTxrnmRyK59ELEaCtlFBdcCi2rGsA-mY7cvJd9Zrm74EYsYxBHZeryx4RkQOE0idGMnSMZAI2uWDhSzGs6ugDRT0FCRWlyVXDCondMWPRDMzfuAOcuoixxnOtCBOEZUK6xG21lqQ2SGEwx5D82q1DrwCIYyimWN0nElzy0Su5sOQ6s6A"
+        self.group_id = "1684120827778191"
+        self.api_key = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJOYW1lIjoiMTExIiwiU3ViamVjdElEIjoiMTY4NDEyMDgyNzkwNjk4NSIsIlBob25lIjoiTVRNME9EZzRPVFl3TURZPSIsIkdyb3VwSUQiOiIxNjg0MTIwODI3Nzc4MTkxIiwiUGFnZU5hbWUiOiIiLCJNYWlsIjoibG91Y2hhbzAyQGJhaWR1LmNvbSIsIkNyZWF0ZVRpbWUiOiIyMDIzLTA1LTI2IDEwOjIxOjUwIiwiaXNzIjoibWluaW1heCJ9.IMtDaL8mNwu-8wMznQgBsDzBfItyuKQp8S7IVsK-TV9x8PrLUSOLTACMvJibTL1s7R34yJAnpKxdTReTD_GRKMkCsfN1ThiFSHCwh2AG6TnvQ8yuUAIOeZKRszyuwfH3wpTV2a3XUkrCyoEOvXIYHFSl24GwzrtGhsU-Xdee6xveK-pyA5iMhAQoAh-9gV6IYRnbEC42rGnOV8QwSK-IQfRm_EiTF-1iKkFKBTZIFhU2uDNCRQ_fwO8vCXKFHih5saYp0WZFGBxbiJh0IILprtySZnBxb5V2FCy14VmrxqBPTH5rCoTvzDTs_UVyYaxmGw5lEpLgiXtWGA-oQxvdMA"
         self.url = f'https://api.minimax.chat/v1/text/chatcompletion?GroupId={self.group_id}'
     
     
@@ -415,6 +425,7 @@ class Req_minimax(object):
             print(traceback.format_exc(),"尝试多次后还是失败了", retry)
             return "-1"
         
+
 if __name__ == '__main__':
 
     parser = argparse.ArgumentParser()
@@ -424,7 +435,7 @@ if __name__ == '__main__':
     parser.add_argument('--bot_type', default='minimax', type=str, choices=['yiyan', 'gpt4', 'gpt3.5', 'glm130b', "glm6b", "minimax"])
     parser.add_argument('--task', 
                         type=str,
-                        default='chuangzuozhe')
+                        default='rensheduihua')
     args = parser.parse_args()
     
     print("bot_type:{}".format(args.bot_type))
@@ -438,30 +449,42 @@ if __name__ == '__main__':
     elif args.task == "chuangzuozhe":
         json_path = "xiaoyichao_gpt/prompt4chuangzuozhe.json"
         sheet_name = u"创作者内容二次加工"
+    elif args.task == "rensheduihua":
+        json_path = "xiaoyichao_gpt/prompt4rensheduihua.json"
+        sheet_name = u"人设设定"
 
 
     with open(json_path, "r", encoding='utf8') as f:
         json_data = json.load(f)
         ori_prompt = json_data[args.bot_type]["prompt"]
 
+    # ori_prompt = "你现在扮演的角色是{}贴吧用户。你收到了一个帖子，其内容如下：\n[{}]\n作为{}贴吧用户，你如何回复这篇帖子？"
+
+
     # 加载数据
     input_list = []
     res_list = []
-    xlsx = pd.read_excel('贴吧数据合并.xlsx', sheet_name=sheet_name)
+    xlsx = pd.read_excel('人设对话-0.xlsx', sheet_name=sheet_name)
     # xlsx = pd.read_excel(args.input_file_path, sheet_name="知识增强") #输入
     # for i in range(len(xlsx.values)):
     # for i in tqdm(range(len(xlsx.values))):
-    for i in tqdm(range(150, len(xlsx.values), 1)):
-        if i<2:
-            continue
+    for i in tqdm(range(0, 210, 1)):
+        # if i<2:
+        #     continue
         ori_content = xlsx.values[i][1]
-        input_list.append(ori_content)
+        ori_source = xlsx.values[i][0]
 
-        content = "```" + ori_content + "```"
+        # input_list.append(ori_content)
+
+        # content = "```" + ori_content + "```"
+        content =  ori_content 
 
         if args.bot_type == "yiyan": # 请求wenxin
             req_wenxin_api = ReqWenxin()
             prompt = ori_prompt+content
+            prompt = ori_prompt.format(ori_source,ori_content,ori_source)
+
+
             res = req_wenxin_api.req_bot(prompt)
             res_wenxin = res.get("result", "-1")
             res_list.append(res_wenxin)
@@ -487,6 +510,9 @@ if __name__ == '__main__':
         elif args.bot_type == "glm130b":   # 请求glm130b
             req_130b_api = ReqGLM_130b()
             prompt = ori_prompt+content
+            prompt = ori_prompt.format(ori_source,ori_content,ori_source)
+
+
             res_130b = req_130b_api.req_gpt(prompt)
             res_list.append(res_130b)
             print("glm130b_res:{}".format(res_130b))
@@ -495,6 +521,9 @@ if __name__ == '__main__':
         elif args.bot_type == "glm6b":  # 请求glm6b
             req_6b_api = ReqGLM_6b()
             prompt = ori_prompt+content
+            prompt = ori_prompt.format(ori_source,ori_content,ori_source)
+
+
             res_6b = req_6b_api.req_6b(prompt)
             res_list.append(res_6b)
             print("sixb_res:{}".format(res_6b))
@@ -503,17 +532,21 @@ if __name__ == '__main__':
         elif args.bot_type == "minimax":     # 请求minimax
             req_minimax_api = Req_minimax()
             prompt = ori_prompt+content
+            prompt = prompt.format(ori_source)
+            input_list.append(prompt)
             res_minimax = req_minimax_api.req_minimax(prompt)
             res_list.append(res_minimax)
+            
+            print("prompt:{}".format(prompt))
             print("minimax_res:{}".format(res_minimax))
-            # time.sleep(10)
+            # time.sleep(3)
 
             # break
 
             # print(json.dumps({"prompt": query_input, "res": res_list}, ensure_ascii=False))
 
     df1 = pd.DataFrame({'PROMPT': input_list, 'res': res_list})
-    output_path = "res_"+args.task+"_"+args.bot_type+".xlsx"
+    output_path = "res_"+args.task+"_"+args.bot_type+"_liuyi.xlsx"
     with pd.ExcelWriter(output_path) as writer:
         df1.to_excel(writer, sheet_name=sheet_name, index=False)
     
